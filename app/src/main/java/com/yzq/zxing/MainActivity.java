@@ -103,7 +103,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .onGranted(new Action() {
                             @Override
                             public void onAction(List<String> permissions) {
-                                Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
+                                Intent intent = new Intent();
+                                intent.setAction("com.humorous.test");
+                                intent.addCategory(Intent.CATEGORY_DEFAULT );
+                                intent.setData(Uri.parse("test://humorous/zxing/Capture"));
                                 /*ZxingConfig是配置类
                                  *可以设置是否显示底部布局，闪光灯，相册，
                                  * 是否播放提示音  震动

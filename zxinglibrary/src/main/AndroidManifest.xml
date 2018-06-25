@@ -24,6 +24,14 @@
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden"
-            android:theme="@style/ZxingTheme"/>
+            android:theme="@style/ZxingTheme">
+            <intent-filter >
+                <action android:name="com.humorous.test"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="test"
+                    android:host="humorous"
+                    android:path="/zxing/Capture"/>
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
